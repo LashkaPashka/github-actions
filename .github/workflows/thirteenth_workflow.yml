@@ -22,5 +22,5 @@ jobs:
         run: echo "Runs on Success"
 
       - name: Runs on Failure
-        if: ${{ success() }}
+        if: ${{ failure() }}
         run: echo "Runs on Failure"
