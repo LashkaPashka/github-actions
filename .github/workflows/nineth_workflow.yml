@@ -1,11 +1,13 @@
 name: Nineth Workflow
 on: 
   repository_dispatch:
-    types: [test]
+    types: [test, forel]
 
 jobs:
   run-first-command:
     runs-on:  ubuntu-latest
     steps:
       - name: Display some Text
-        run: echo ${{ github.event.client_payload.titleTest }}
+        run: | 
+          echo ${{ github.event.client_payload.titleTest }}
+          echo ${{ github.event.client_payload.titleFor }}
