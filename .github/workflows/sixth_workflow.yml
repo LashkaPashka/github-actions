@@ -1,0 +1,25 @@
+name: Sixth Workflow
+on:
+  push:
+    branches:
+      - master
+      - "page/*" # паттерн работающий с ветками такого типа page/about page/blog page/contact
+      - "page/**" # page/category/lifestyle
+      - "!page/blog" # Игнорирование ветки page/blog
+    #tags:
+    #  - "v1.*" # паттерн говорящей что для всех 1.0 .. 1.1.1
+    #  - "!1.2.1" # Исключаем версию 1.2.1
+    paths:
+      - "**.html"
+
+# $GITHUB_SHA - выводит ID послднего коммита 
+# $GITHUB_REF - выводит папку 
+
+jobs:
+  run-first-command:
+    runs-on:  ubuntu-latest
+    steps:
+      - name: Event Vars
+        run: | 
+          echo $GITHUB_SHA 
+          echo $GITHUB_REF
