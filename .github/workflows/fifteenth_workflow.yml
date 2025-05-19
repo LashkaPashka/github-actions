@@ -5,11 +5,10 @@ jobs:
     first-jobs:
       runs-on: ubuntu-latest
       steps:
-        - name: Math expression
+        - name: Math expressions
           run: expr 2 + 2 > math-result.txt
         - name: Upload result file
           uses: actions/upload-artifact@v3
           with:
             name: math-result
             path: math-result.txt
-            
