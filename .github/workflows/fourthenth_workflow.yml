@@ -1,0 +1,20 @@
+name: Fourtenth Workflow
+on: workflow_dispatch
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache node_modules
+        id: cache-step
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: "cache-file"
+
+      - name: Display Cache
+        run: echo '${{ steps.cache-step.outputs }}'
+      
+      - name: Setup up dependencies
+        run: npm install
