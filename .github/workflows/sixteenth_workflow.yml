@@ -1,4 +1,4 @@
-name: Sixteenth Workflow
+name: Sixteenth Workflows
 on: push
 
 jobs:
