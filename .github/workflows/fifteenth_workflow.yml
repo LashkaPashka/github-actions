@@ -27,7 +27,6 @@ jobs:
           run: |
             value=$(cat math-result.txt)
             expr $value \* 2 > math-result.txt
-
         - name: Upload result file
           uses: actions/upload-artifact@v4
           with:
@@ -45,5 +44,5 @@ jobs:
             path: .
         - name: Print File
           run: |
-            value=`cat math-result.txt`
+            value=$(cat math-result.txt)
             echo $value
